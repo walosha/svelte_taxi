@@ -18,28 +18,32 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
+    height: "100%",
+    padding: "15px",
     justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#808080",
     "& > *": {
       margin: theme.spacing(1),
       width: theme.spacing(16),
       height: theme.spacing(16)
     }
   },
+  heading: {
+    justifyContent: "center"
+  },
   form: {
+    padding: "10px",
     "& > *": {
       margin: theme.spacing(1),
       width: 200
     }
   },
   paper: {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%,-50%)",
     width: "300px",
     height: "276px",
     margin: "8px",
-    padding: "15px"
+    padding: "30px"
   }
 }));
 
@@ -66,7 +70,14 @@ export default function Login() {
   return (
     <div className={classes.root}>
       <Paper className={classes.paper} elevation={3}>
-        <Typography color="primary">Administrative Login </Typography>
+        <Typography
+          variant="subtitle1"
+          align="center"
+          gutterBottom={true}
+          color="primary"
+        >
+          Administrative Log in
+        </Typography>
         <form className={classes.form} noValidate autoComplete="off">
           <TextField id="username" label="Username" />
 
@@ -93,7 +104,7 @@ export default function Login() {
             />
           </FormControl>
         </form>
-        <Button variant="contained" color="primary">
+        <Button variant="contained" color="secondary">
           {" "}
           Log In
         </Button>
