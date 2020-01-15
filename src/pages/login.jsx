@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import clsx from "clsx";
 import {
+  Container,
   Paper,
   Typography,
   TextField,
@@ -11,23 +12,20 @@ import {
   InputAdornment,
   IconButton
 } from "@material-ui/core";
+import AccountCircle from "@material-ui/icons/AccountCircle";
+import { Box } from "@material-ui/core";
+
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import { makeStyles } from "@material-ui/core/styles";
 
+/*styling of the Login Component*/
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
     height: "100%",
     padding: "15px",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#808080",
-    "& > *": {
-      margin: theme.spacing(1),
-      width: theme.spacing(16),
-      height: theme.spacing(16)
-    }
+    alignItems: "center"
   },
   heading: {
     justifyContent: "center"
@@ -40,12 +38,14 @@ const useStyles = makeStyles(theme => ({
     }
   },
   paper: {
-    width: "300px",
-    height: "276px",
-    margin: "8px",
-    padding: "30px"
+    width: 300,
+    height: 276,
+    margin: 8,
+    padding: 35
   }
 }));
+
+//Login Component Logic
 
 export default function Login() {
   const classes = useStyles();
@@ -68,7 +68,7 @@ export default function Login() {
   };
 
   return (
-    <div className={classes.root}>
+    <Container className={classes.root} maxWidth="xs">
       <Paper className={classes.paper} elevation={3}>
         <Typography
           variant="subtitle1"
@@ -79,8 +79,17 @@ export default function Login() {
           Administrative Log in
         </Typography>
         <form className={classes.form} noValidate autoComplete="off">
-          <TextField id="username" label="Username" />
-
+          <TextField
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <AccountCircle />
+                </InputAdornment>
+              )
+            }}
+            id="username"
+            label="Username"
+          />
           <FormControl className={clsx(classes.margin, classes.textField)}>
             <InputLabel htmlFor="standard-adornment-password">
               Password
@@ -104,11 +113,12 @@ export default function Login() {
             />
           </FormControl>
         </form>
-        <Button variant="contained" color="secondary">
-          {" "}
-          Log In
-        </Button>
+        <Box style={{ textAlign: "end" }}>
+          <Button variant="contained" color="secondary">
+            Log In
+          </Button>
+        </Box>
       </Paper>
-    </div>
+    </Container>
   );
 }
