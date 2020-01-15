@@ -79,17 +79,22 @@ export default function Login() {
           Administrative Log in
         </Typography>
         <form className={classes.form} noValidate autoComplete="off">
-          <TextField
-            InputProps={{
-              endAdornment: (
+          <FormControl className={clsx(classes.margin, classes.textField)}>
+            <InputLabel htmlFor="standard-adornment-username">
+              username
+            </InputLabel>
+            <Input
+              id="standard-adornment-username"
+              type={values.showusername ? "text" : "username"}
+              value={values.username}
+              onChange={handleChange("username")}
+              endAdornment={
                 <InputAdornment position="end">
-                  <AccountCircle />
+                  <AccountCircle aria-label="toggle username visibility" />
                 </InputAdornment>
-              )
-            }}
-            id="username"
-            label="Username"
-          />
+              }
+            />
+          </FormControl>
           <FormControl className={clsx(classes.margin, classes.textField)}>
             <InputLabel htmlFor="standard-adornment-password">
               Password
