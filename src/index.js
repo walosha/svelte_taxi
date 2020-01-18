@@ -1,23 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
-import green from "@material-ui/core/colors/green";
-import * as serviceWorker from "./serviceWorker";
+import { MuiThemeProvider } from "@material-ui/core/styles";
+import { CssBaseline } from "@material-ui/core";
 
+import * as serviceWorker from "./serviceWorker";
+import theme from "./theme";
 import App from "./App";
 import "./index.css";
 
-const theme = createMuiTheme({
-  palette: {
-    main: { primary: "#fff", secondary: green }
-  },
-  status: {
-    danger: "orange"
-  }
-});
-
 ReactDOM.render(
   <MuiThemeProvider theme={theme}>
+    <CssBaseline />
     <App />
   </MuiThemeProvider>,
   document.getElementById("root")

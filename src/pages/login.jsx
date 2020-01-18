@@ -4,7 +4,6 @@ import {
   Container,
   Paper,
   Typography,
-  TextField,
   Button,
   FormControl,
   Input,
@@ -37,11 +36,12 @@ const useStyles = makeStyles(theme => ({
       width: 200
     }
   },
-  paper: {
+  MuiPaper: {
     width: 300,
     height: 276,
     margin: 8,
-    padding: 35
+    padding: 35,
+    borderRadius: 7
   }
 }));
 
@@ -66,10 +66,14 @@ export default function Login() {
   const handleMouseDownPassword = event => {
     event.preventDefault();
   };
+  const onHandleSubmit = () => {
+    const { password, username } = values;
+    console.log({ username, password });
+  };
 
   return (
     <Container className={classes.root} maxWidth="xs">
-      <Paper className={classes.paper} elevation={3}>
+      <Paper className={classes.MuiPaper} elevation={3}>
         <Typography
           variant="subtitle1"
           align="center"
@@ -81,7 +85,7 @@ export default function Login() {
         <form className={classes.form} noValidate autoComplete="off">
           <FormControl className={clsx(classes.margin, classes.textField)}>
             <InputLabel htmlFor="standard-adornment-username">
-              username
+              Username
             </InputLabel>
             <Input
               id="standard-adornment-username"
@@ -119,7 +123,11 @@ export default function Login() {
           </FormControl>
         </form>
         <Box style={{ textAlign: "end" }}>
-          <Button variant="contained" color="secondary">
+          <Button
+            onClick={onHandleSubmit}
+            variant="contained"
+            color="secondary"
+          >
             Log In
           </Button>
         </Box>
