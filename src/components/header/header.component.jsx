@@ -49,7 +49,10 @@ export default function Header() {
           >
             Svelte Taxi
           </Typography>
-          <Box style={{ marginLeft: "auto" }}>
+          <Box
+            display={{ xs: "none", sm: "block" }}
+            style={{ marginLeft: "auto" }}
+          >
             <Button>Sign In</Button>
           </Box>
         </Toolbar>
