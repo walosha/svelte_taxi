@@ -7,6 +7,8 @@ import Typography from "@material-ui/core/Typography";
 import { Button } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import { Box } from "@material-ui/core";
+import SettingIcon from "./SettingsIcon";
+import BellNotificationIcon from "./BellNotificationIcon";
 
 const useStyles = makeStyles(theme => ({
   root: { backgroundColor: theme.palette.background.default },
@@ -49,9 +51,15 @@ export default function Header() {
           >
             Svelte Taxi
           </Typography>
+          <Box style={{ marginLeft: "auto" }}>
+            <BellNotificationIcon isSignedIn={false} notificationCount="5" />
+          </Box>
+          <Box style={{ marginLeft: "2rem" }}>
+            <SettingIcon isSignedIn={true} />
+          </Box>
           <Box
             display={{ xs: "none", sm: "block" }}
-            style={{ marginLeft: "auto" }}
+            style={{ marginLeft: "3rem" }}
           >
             <Button>Sign In</Button>
           </Box>
