@@ -1,14 +1,16 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./components/header/header.component";
 import SignIn from "./pages/login";
+import Dashboard from "./pages/dashBoard";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <Router>
       <Header />
       <Route exact path="/" component={SignIn}></Route>
-    </BrowserRouter>
+      <Route exact path="/dashboard" component={Dashboard}></Route>
+    </Router>
   );
 };
 
