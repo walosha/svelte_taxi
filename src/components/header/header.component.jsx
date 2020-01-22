@@ -24,6 +24,15 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up("xs")]: {
       display: "block"
     }
+  },
+  userDetail: {
+    display: "flex",
+    alignItems: "center"
+  },
+  userPanel: {
+    marginLeft: "3rem",
+    padding: ".8rem 0",
+    justifyContent: "center"
   }
 }));
 
@@ -59,13 +68,19 @@ export default function Header() {
           </Box>
           <Box
             display={{ xs: "none", sm: "block" }}
-            style={{ marginLeft: "3rem" }}
+            className={classes.userPanel}
           >
-            <Typography color="primary">John Smith</Typography>
-            <Typography color="primary">johnsmith@yahoo.com</Typography>
-            <IconButton>
-              <ArrowDownward />
-            </IconButton>
+            <Box className={classes.userDetail}>
+              <Typography variant="subtitle1" color="primary">
+                John Smith
+              </Typography>
+              <IconButton style={{ alignSelf: "flex-end" }} color="primary">
+                <ArrowDownward />
+              </IconButton>
+            </Box>
+            <Typography variant="subtitle2" color="primary">
+              johnsmith@yahoo.com
+            </Typography>
           </Box>
         </Toolbar>
       </AppBar>
