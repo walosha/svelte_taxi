@@ -1,15 +1,15 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import Header from "./components/header/header.component";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SignIn from "./pages/login";
-import Dashboard from "./pages/dashBoard";
+import Account from "./pages/account";
 
 const App = () => {
   return (
     <Router>
-      <Header />
-      <Route exact path="/" component={SignIn}></Route>
-      <Route exact path="/dashboard" component={Dashboard}></Route>
+      <Switch>
+        <Route exact path="/" component={SignIn}></Route>
+        <Route path="/" component={Account}></Route>
+      </Switch>
     </Router>
   );
 };

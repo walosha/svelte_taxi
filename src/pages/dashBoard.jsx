@@ -9,13 +9,11 @@ import {
   List,
   Container
 } from "@material-ui/core";
-import DashBoardInfoCard from "../components/header/DashBoardInfoCard";
-import {
-  mainListItems,
-  secondaryListItems
-} from "../components/header/ListItems";
+import DashBoardInfoCard from "../components/DashBoardInfoCard";
+import { mainListItems, secondaryListItems } from "../components/ListItems";
+import { cardData } from ".././data/cardData";
 
-const drawerWidth = 240;
+const drawerWidth = 230;
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -33,7 +31,8 @@ const useStyles = makeStyles(theme => ({
   content: {
     flexGrow: 1,
     height: "100vh",
-    overflow: "auto"
+    overflow: "auto",
+    background: "#f7f9fc"
   },
   container: {
     paddingTop: theme.spacing(4),
@@ -59,15 +58,18 @@ export default function DashBoard() {
       </Drawer>
       <main className={classes.content}>
         <Container maxWidth="lg" className={classes.container}>
-          <Typography variant="h3">Administrator Dashboard</Typography>
-          <Typography variant="subtitle2">
-            Manage Drivers And Customers with Ease From One Place
-          </Typography>
           <Grid container spacing={3}>
-            <DashBoardInfoCard />
-            <DashBoardInfoCard />
-            <DashBoardInfoCard />
-            <DashBoardInfoCard />
+            <Grid item xs={12}>
+              <Typography variant="h4">Administrator Dashboard</Typography>
+            </Grid>
+            <Grid item xs={12}>
+              <Typography variant="subtitle2">
+                Manage Drivers And Customers with Ease From One Place
+              </Typography>
+            </Grid>
+            {cardData.map((data, idx) => (
+              <DashBoardInfoCard key={idx} {...data} />
+            ))}
           </Grid>
         </Container>
       </main>

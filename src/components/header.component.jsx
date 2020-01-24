@@ -52,6 +52,7 @@ export default function Header() {
           >
             <MenuIcon />
           </IconButton>
+
           <Typography
             className={classes.title}
             color="primary"
@@ -60,11 +61,16 @@ export default function Header() {
           >
             Svelte Taxi
           </Typography>
+
           <Box style={{ marginLeft: "auto" }}>
-            <BellNotificationIcon isSignedIn={true} notificationCount="5" />
+            <IconButton>
+              <BellNotificationIcon isSignedIn={true} notificationCount="8" />
+            </IconButton>
           </Box>
           <Box style={{ marginLeft: "2rem" }}>
-            <SettingIcon isSignedIn={true} />
+            <IconButton>
+              <SettingIcon isSignedIn={true} />
+            </IconButton>
           </Box>
           <Box
             display={{ xs: "none", sm: "block" }}

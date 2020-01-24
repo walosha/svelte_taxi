@@ -1,19 +1,32 @@
 import React from "react";
+import Link from "@material-ui/core/Link";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import PeopleIcon from "@material-ui/icons/People";
+import {
+  Home,
+  DriveEtaOutlined,
+  People,
+  PaymentOutlined,
+  AttachMoney,
+  NotificationsNone
+} from "@material-ui/icons";
 import BarChartIcon from "@material-ui/icons/BarChart";
-import LayersIcon from "@material-ui/icons/Layers";
 import AssignmentIcon from "@material-ui/icons/Assignment";
 
 export const mainListItems = (
   <div>
     <ListItem button>
       <ListItemIcon>
-        <DashboardIcon />
+        <Home />
+      </ListItemIcon>
+      <ListItemText primary="Home" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <DriveEtaOutlined />
       </ListItemIcon>
       <ListItemText primary="Vehicles" />
     </ListItem>
@@ -25,7 +38,7 @@ export const mainListItems = (
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <DashboardIcon />
+        <People />
       </ListItemIcon>
       <ListItemText primary="Customers" />
     </ListItem>
@@ -43,13 +56,13 @@ export const mainListItems = (
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <ShoppingCartIcon />
+        <NotificationsNone />
       </ListItemIcon>
       <ListItemText primary="Push Notifications" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <PeopleIcon />
+        <AttachMoney />
       </ListItemIcon>
       <ListItemText primary="Loans" />
     </ListItem>
@@ -61,7 +74,7 @@ export const mainListItems = (
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <LayersIcon />
+        <PaymentOutlined />
       </ListItemIcon>
       <ListItemText primary="Payments" />
     </ListItem>
@@ -75,10 +88,12 @@ export const mainListItems = (
 );
 
 export const secondaryListItems = (
-  <ListItem button>
-    <ListItemIcon>
-      <AssignmentIcon />
-    </ListItemIcon>
-    <ListItemText primary="Log out" />
-  </ListItem>
+  <Link color="primary" href="/">
+    <ListItem button>
+      <ListItemIcon>
+        <AssignmentIcon />
+      </ListItemIcon>
+      <ListItemText primary="Log out" />
+    </ListItem>
+  </Link>
 );
