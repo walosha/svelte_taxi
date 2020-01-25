@@ -18,72 +18,94 @@ import AssignmentIcon from "@material-ui/icons/Assignment";
 
 export const mainListItems = (
   <div>
-    <ListItem button>
-      <ListItemIcon>
-        <Home />
-      </ListItemIcon>
-      <ListItemText primary="Home" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <DriveEtaOutlined />
-      </ListItemIcon>
-      <ListItemText primary="Vehicles" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <DashboardIcon />
-      </ListItemIcon>
-      <ListItemText primary="Drivers" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <People />
-      </ListItemIcon>
-      <ListItemText primary="Customers" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <DashboardIcon />
-      </ListItemIcon>
-      <ListItemText primary="Rides" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <ShoppingCartIcon />
-      </ListItemIcon>
-      <ListItemText primary="Support Tickets" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <NotificationsNone />
-      </ListItemIcon>
-      <ListItemText primary="Push Notifications" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <AttachMoney />
-      </ListItemIcon>
-      <ListItemText primary="Loans" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <BarChartIcon />
-      </ListItemIcon>
-      <ListItemText primary="Analytics" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <PaymentOutlined />
-      </ListItemIcon>
-      <ListItemText primary="Payments" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Settings" />
-    </ListItem>
+    <Link href="/dashboard">
+      <ListItem button>
+        <ListItemIcon>
+          <Home />
+        </ListItemIcon>
+        <ListItemText primary="Home" />
+      </ListItem>
+    </Link>
+    <Link href="/vehicles">
+      <ListItem button>
+        <ListItemIcon>
+          <DriveEtaOutlined />
+        </ListItemIcon>
+        <ListItemText primary="Vehicles" />
+      </ListItem>
+    </Link>
+    <Link href="/drivers">
+      <ListItem button>
+        <ListItemIcon>
+          <DashboardIcon />
+        </ListItemIcon>
+        <ListItemText primary="Drivers" />
+      </ListItem>
+    </Link>
+    <Link href="/customers">
+      <ListItem button>
+        <ListItemIcon>
+          <People />
+        </ListItemIcon>
+        <ListItemText primary="Customers" />
+      </ListItem>
+    </Link>
+    <Link href="/rides">
+      <ListItem button>
+        <ListItemIcon>
+          <DashboardIcon />
+        </ListItemIcon>
+        <ListItemText primary="Rides" />
+      </ListItem>
+    </Link>
+    <Link href="/support-tickets">
+      <ListItem button>
+        <ListItemIcon>
+          <ShoppingCartIcon />
+        </ListItemIcon>
+        <ListItemText primary="Support Tickets" />
+      </ListItem>
+    </Link>
+    <Link href="/notifications">
+      <ListItem button>
+        <ListItemIcon>
+          <NotificationsNone />
+        </ListItemIcon>
+        <ListItemText primary="Push Notifications" />
+      </ListItem>
+    </Link>
+    <Link href="/loans">
+      <ListItem button>
+        <ListItemIcon>
+          <AttachMoney />
+        </ListItemIcon>
+        <ListItemText primary="Loans" />
+      </ListItem>
+    </Link>
+    <Link href="/analytics">
+      <ListItem button>
+        <ListItemIcon>
+          <BarChartIcon />
+        </ListItemIcon>
+        <ListItemText primary="Analytics" />
+      </ListItem>
+    </Link>
+    <Link href="/payments">
+      <ListItem button>
+        <ListItemIcon>
+          <PaymentOutlined />
+        </ListItemIcon>
+        <ListItemText primary="Payments" />
+      </ListItem>
+    </Link>
+    <Link href="/settings">
+      <ListItem button>
+        <ListItemIcon>
+          <AssignmentIcon />
+        </ListItemIcon>
+        <ListItemText primary="Settings" />
+      </ListItem>
+    </Link>
   </div>
 );
 

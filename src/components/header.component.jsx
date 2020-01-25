@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
   },
   userPanel: {
     marginLeft: "3rem",
-    padding: ".8rem 0",
+    padding: ".5rem 0",
     justifyContent: "center"
   }
 }));
@@ -77,14 +77,14 @@ export default function Header() {
             className={classes.userPanel}
           >
             <Box className={classes.userDetail}>
-              <Typography variant="subtitle1" color="primary">
+              <Typography component="p" color="primary">
                 John Smith
               </Typography>
               <IconButton style={{ alignSelf: "flex-end" }} color="primary">
                 <ArrowDownward />
               </IconButton>
             </Box>
-            <Typography variant="subtitle2" color="primary">
+            <Typography component="p" color="primary">
               johnsmith@yahoo.com
             </Typography>
           </Box>

@@ -24,7 +24,8 @@ const useStyles = makeStyles(theme => ({
   },
   indicator: {
     display: "flex",
-    alignItems: "center"
+    alignItems: "center",
+    marginTop: theme.spacing(2)
   },
   iconContainer: {
     borderRadius: 50,
