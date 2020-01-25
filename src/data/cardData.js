@@ -25,7 +25,7 @@ export const cardData = [
   },
   {
     title: "Total Drvers",
-    amount: "1765",
+    amount: "1,765",
     percentChange: 6.7,
     icon: <DirectionsBus />,
     colorDark: "#e909f4",

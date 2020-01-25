@@ -1,5 +1,6 @@
-import React from "react";
-import Link from "@material-ui/core/Link";
+import React, { Fragment } from "react";
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -16,106 +17,111 @@ import {
 import BarChartIcon from "@material-ui/icons/BarChart";
 import AssignmentIcon from "@material-ui/icons/Assignment";
 
+const StyledLink = styled(NavLink)`
+  color: #19857b;
+  text-decoration: none;
+`;
+
 export const mainListItems = (
-  <div>
-    <Link href="/dashboard">
+  <Fragment>
+    <StyledLink to="/dashboard">
       <ListItem button>
         <ListItemIcon>
           <Home />
         </ListItemIcon>
         <ListItemText primary="Home" />
       </ListItem>
-    </Link>
-    <Link href="/vehicles">
+    </StyledLink>
+    <StyledLink to="/vehicles">
       <ListItem button>
         <ListItemIcon>
           <DriveEtaOutlined />
         </ListItemIcon>
         <ListItemText primary="Vehicles" />
       </ListItem>
-    </Link>
-    <Link href="/drivers">
+    </StyledLink>
+    <StyledLink to="/drivers">
       <ListItem button>
         <ListItemIcon>
           <DashboardIcon />
         </ListItemIcon>
         <ListItemText primary="Drivers" />
       </ListItem>
-    </Link>
-    <Link href="/customers">
+    </StyledLink>
+    <StyledLink to="/customers">
       <ListItem button>
         <ListItemIcon>
           <People />
         </ListItemIcon>
         <ListItemText primary="Customers" />
       </ListItem>
-    </Link>
-    <Link href="/rides">
+    </StyledLink>
+    <StyledLink to="/rides">
       <ListItem button>
         <ListItemIcon>
           <DashboardIcon />
         </ListItemIcon>
         <ListItemText primary="Rides" />
       </ListItem>
-    </Link>
-    <Link href="/support-tickets">
+    </StyledLink>
+    <StyledLink to="/support-tickets">
       <ListItem button>
         <ListItemIcon>
           <ShoppingCartIcon />
         </ListItemIcon>
         <ListItemText primary="Support Tickets" />
       </ListItem>
-    </Link>
-    <Link href="/notifications">
+    </StyledLink>
+    <StyledLink to="/notifications">
       <ListItem button>
         <ListItemIcon>
           <NotificationsNone />
         </ListItemIcon>
         <ListItemText primary="Push Notifications" />
       </ListItem>
-    </Link>
-    <Link href="/loans">
+    </StyledLink>
+    <StyledLink to="/loans">
       <ListItem button>
         <ListItemIcon>
           <AttachMoney />
         </ListItemIcon>
         <ListItemText primary="Loans" />
       </ListItem>
-    </Link>
-    <Link href="/analytics">
+    </StyledLink>
+    <StyledLink to="/analytics">
       <ListItem button>
         <ListItemIcon>
           <BarChartIcon />
         </ListItemIcon>
         <ListItemText primary="Analytics" />
       </ListItem>
-    </Link>
-    <Link href="/payments">
+    </StyledLink>
+    <StyledLink to="/payments">
       <ListItem button>
         <ListItemIcon>
           <PaymentOutlined />
         </ListItemIcon>
         <ListItemText primary="Payments" />
       </ListItem>
-    </Link>
-    <Link href="/settings">
+    </StyledLink>
+    <StyledLink to="/settings">
       <ListItem button>
         <ListItemIcon>
           <AssignmentIcon />
         </ListItemIcon>
         <ListItemText primary="Settings" />
       </ListItem>
-    </Link>
-  </div>
+    </StyledLink>
+  </Fragment>
 );
 
 export const secondaryListItems = (
-  <Link color="primary" href="/">
+  <StyledLink color="primary" to="/">
     <ListItem button>
       <ListItemIcon>
         <AssignmentIcon />
       </ListItemIcon>
       <ListItemText primary="Log out" />
     </ListItem>
-  </Link>
+  </StyledLink>
 );

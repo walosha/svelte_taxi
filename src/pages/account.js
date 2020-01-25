@@ -31,17 +31,14 @@ function Account() {
         <Switch>
           <Route path="/dashboard" component={Dashboard}></Route>
           <Route path="/drivers" component={Drivers}></Route>
-          <Route path="/Vehicles" component={Vehicles}></Route>
+          <Route path="/vehicles" component={Vehicles}></Route>
           <Route path="/Loans" component={Loans}></Route>
           <Route path="/Analytics" component={Analytics}></Route>
           <Route path="/customers" component={Customers}></Route>
-          <Route path="/Payments" component={Payments}></Route>
-          <Route
-            path="/PushNotifications"
-            component={PushNotifications}
-          ></Route>
-          <Route path="/Rides" component={Rides}></Route>
-          <Route path="/Settings" component={Settings}></Route>
+          <Route path="/payments" component={Payments}></Route>
+          <Route path="/notifications" component={PushNotifications}></Route>
+          <Route path="/rides" component={Rides}></Route>
+          <Route path="/settings" component={Settings}></Route>
           <Route path="/support-tickets" component={SupportTickets}></Route>
         </Switch>
       </div>

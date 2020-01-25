@@ -3,7 +3,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import { Typography, Container } from "@material-ui/core";
 import DashBoardInfoCard from "../components/DashBoardInfoCard";
+import { RenderLineChart } from "../components/chart";
 import { cardData } from ".././data/cardData";
+import { lineData } from ".././data/lineChartData";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -37,8 +39,14 @@ export default function DashBoard() {
             </Typography>
           </Grid>
           {cardData.map((data, idx) => (
-            <DashBoardInfoCard key={idx} {...data} />
+            <Grid item xs={12} sm={6} md={3}>
+              <DashBoardInfoCard key={idx} {...data} />
+            </Grid>
           ))}
+          <Grid item xs={12} sm={9}>
+            {/* Line chart for trip and Travel */}
+            {RenderLineChart(lineData)}
+          </Grid>
         </Grid>
       </Container>
     </main>
