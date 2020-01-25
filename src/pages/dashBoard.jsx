@@ -51,7 +51,7 @@ export default function DashBoard() {
             {/* Line chart for trip and Travel */}
             {RenderLineChart(lineData)}
           </Grid>
-          <Grid item sm={12} md={7}>
+          <Grid item xs={12} sm={12} md={5}>
             {/* Progress Bar for Top 6 Cities */}
             <Typography
               component="h2"
