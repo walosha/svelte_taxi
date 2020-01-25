@@ -5,7 +5,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import MenuIcon from "@material-ui/icons/Menu";
-import { ArrowDownward } from "@material-ui/icons";
+import { ExpandMore } from "@material-ui/icons";
 import { Box } from "@material-ui/core";
 import SettingIcon from "./SettingsIcon";
 import BellNotificationIcon from "./BellNotificationIcon";
@@ -81,7 +81,7 @@ export default function Header() {
                 John Smith
               </Typography>
               <IconButton style={{ alignSelf: "flex-end" }} color="primary">
-                <ArrowDownward />
+                <ExpandMore />
               </IconButton>
             </Box>
             <Typography component="p" color="primary">

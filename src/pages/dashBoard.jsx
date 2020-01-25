@@ -1,9 +1,10 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import { Typography, Container } from "@material-ui/core";
+import { Typography, Container, Paper } from "@material-ui/core";
 import DashBoardInfoCard from "../components/DashBoardInfoCard";
 import { RenderLineChart } from "../components/chart";
+import ProgressBar from "../components/ProgessBar";
 import { cardData } from ".././data/cardData";
 import { lineData } from ".././data/lineChartData";
 
@@ -20,6 +21,9 @@ const useStyles = makeStyles(theme => ({
   container: {
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(4)
+  },
+  paper: {
+    padding: theme.spacing(3)
   }
 }));
 
@@ -39,13 +43,32 @@ export default function DashBoard() {
             </Typography>
           </Grid>
           {cardData.map((data, idx) => (
-            <Grid item xs={12} sm={6} md={3}>
-              <DashBoardInfoCard key={idx} {...data} />
+            <Grid key={idx} item xs={12} sm={6} md={3}>
+              <DashBoardInfoCard {...data} />
             </Grid>
           ))}
-          <Grid item xs={12} sm={9}>
+          <Grid className={classes.paper} item sm={12} md={7}>
             {/* Line chart for trip and Travel */}
             {RenderLineChart(lineData)}
+          </Grid>
+          <Grid item sm={12} md={7}>
+            {/* Progress Bar for Top 6 Cities */}
+            <Typography
+              component="h2"
+              variant="h6"
+              color="primary"
+              gutterBottom
+            >
+              Top 6 Cities
+            </Typography>
+            <Paper className={classes.paper} elevation={3}>
+              <ProgressBar />
+              <ProgressBar />
+              <ProgressBar />
+              <ProgressBar />
+              <ProgressBar />
+              <ProgressBar />
+            </Paper>
           </Grid>
         </Grid>
       </Container>

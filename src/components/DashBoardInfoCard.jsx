@@ -4,7 +4,7 @@ import { Box } from "@material-ui/core";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-import { Add, ArrowForward } from "@material-ui/icons";
+import { Add, CallMade } from "@material-ui/icons";
 
 const useStyles = makeStyles(theme => ({
   MuiCardContent: {
@@ -45,37 +45,35 @@ export default function DashBoardInfoCard({
   const classes = useStyles();
 
   return (
-    
-      <Card className={classes.card}>
-        <CardContent className={classes.MuiCardContent}>
-          <div className={classes.textContent}>
-            <Typography
-              className={classes.title}
-              color="textSecondary"
-              gutterBottom
-            >
-              {title}
-            </Typography>
-            <Typography gutterBottom variant="h5" component="h3">
-              {amount}
-            </Typography>
-            <div className={classes.indicator}>
-              <Add />
-              <ArrowForward />
-              <Typography variant="body2" component="p">
-                {`${percentChange}%`}
-              </Typography>
-            </div>
-          </div>
-          <Box
-            style={{ color: colorDark, background: colorLight }}
-            className={classes.iconContainer}
-            clone
+    <Card className={classes.card}>
+      <CardContent className={classes.MuiCardContent}>
+        <div className={classes.textContent}>
+          <Typography
+            className={classes.title}
+            color="textSecondary"
+            gutterBottom
           >
-            {icon}
-          </Box>
-        </CardContent>
-      </Card>
-  
+            {title}
+          </Typography>
+          <Typography gutterBottom variant="h5" component="h3">
+            {amount}
+          </Typography>
+          <div className={classes.indicator}>
+            <Add />
+            <CallMade />
+            <Typography variant="body2" component="p">
+              {`${percentChange}%`}
+            </Typography>
+          </div>
+        </div>
+        <Box
+          style={{ color: colorDark, background: colorLight }}
+          className={classes.iconContainer}
+          clone
+        >
+          {icon}
+        </Box>
+      </CardContent>
+    </Card>
   );
 }

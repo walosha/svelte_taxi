@@ -4,18 +4,20 @@ import styled from "styled-components";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import DashboardIcon from "@material-ui/icons/Dashboard";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import {
   Home,
-  DriveEtaOutlined,
+  LocalTaxi,
+  DirectionsBus,
   People,
   PaymentOutlined,
-  AttachMoney,
-  NotificationsNone
+  AccountBalance,
+  NotificationsNone,
+  Settings,
+  ExitToApp,
+  AirlineSeatReclineExtra
 } from "@material-ui/icons";
 import BarChartIcon from "@material-ui/icons/BarChart";
-import AssignmentIcon from "@material-ui/icons/Assignment";
 
 const StyledLink = styled(NavLink)`
   color: #19857b;
@@ -35,7 +37,7 @@ export const mainListItems = (
     <StyledLink to="/vehicles">
       <ListItem button>
         <ListItemIcon>
-          <DriveEtaOutlined />
+          <DirectionsBus />
         </ListItemIcon>
         <ListItemText primary="Vehicles" />
       </ListItem>
@@ -43,7 +45,7 @@ export const mainListItems = (
     <StyledLink to="/drivers">
       <ListItem button>
         <ListItemIcon>
-          <DashboardIcon />
+          <AirlineSeatReclineExtra />
         </ListItemIcon>
         <ListItemText primary="Drivers" />
       </ListItem>
@@ -59,7 +61,7 @@ export const mainListItems = (
     <StyledLink to="/rides">
       <ListItem button>
         <ListItemIcon>
-          <DashboardIcon />
+          <LocalTaxi />
         </ListItemIcon>
         <ListItemText primary="Rides" />
       </ListItem>
@@ -83,7 +85,7 @@ export const mainListItems = (
     <StyledLink to="/loans">
       <ListItem button>
         <ListItemIcon>
-          <AttachMoney />
+          <AccountBalance />
         </ListItemIcon>
         <ListItemText primary="Loans" />
       </ListItem>
@@ -107,7 +109,7 @@ export const mainListItems = (
     <StyledLink to="/settings">
       <ListItem button>
         <ListItemIcon>
-          <AssignmentIcon />
+          <Settings />
         </ListItemIcon>
         <ListItemText primary="Settings" />
       </ListItem>
@@ -119,7 +121,7 @@ export const secondaryListItems = (
   <StyledLink color="primary" to="/">
     <ListItem button>
       <ListItemIcon>
-        <AssignmentIcon />
+        <ExitToApp />
       </ListItemIcon>
       <ListItemText primary="Log out" />
     </ListItem>
