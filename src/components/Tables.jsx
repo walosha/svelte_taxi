@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
+import { TableBody, Typography } from "@material-ui/core";
 import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
@@ -14,10 +14,7 @@ const useStyles = makeStyles({
   }
 });
 
-
-
-
-export default function DataTable({children}) {
+export default function DataTable({ children, header }) {
   const classes = useStyles();
 
   return (
@@ -25,18 +22,14 @@ export default function DataTable({children}) {
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Vehicle ID</TableCell>
-            <TableCell align="right">Plate Number</TableCell>
-            <TableCell align="right">Numbers Of Trip</TableCell>
-            <TableCell align="center">Drivers</TableCell>
-            <TableCell align="right">City</TableCell>
-            <TableCell align="right">Status</TableCell>
-            <TableCell align="right">Action</TableCell>
+            {header.map((item, key) => (
+              <TableCell key={key} align="right">
+                <Typography variant="subtitle2">{item}</Typography>
+              </TableCell>
+            ))}
           </TableRow>
         </TableHead>
-        <TableBody>
-          {children}
-        </TableBody>
+        <TableBody>{children}</TableBody>
       </Table>
     </TableContainer>
   );

@@ -12,8 +12,17 @@ import InputBase from "@material-ui/core/InputBase";
 import SearchIcon from "@material-ui/icons/Search";
 import DataTable from "../components/Tables";
 import { vehicleData } from "../data/vehicledata";
-
 import ControlledOpenSelect from "../components/Select";
+
+const headingItems = [
+  "Vehicle ID",
+  "Plate Number",
+  "Numbers Of Trip",
+  "Drivers",
+  "City",
+  "Status",
+  "Action"
+];
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -104,9 +113,9 @@ export default function Vehicles() {
         </Grid>
         <Grid>
           <Paper elevation={3}>
-            <DataTable>
-              {vehicleData.map(row => (
-                <TableRow key={row.name}>
+            <DataTable header={headingItems}>
+              {vehicleData.map((row, key) => (
+                <TableRow key={key}>
                   <TableCell component="th" scope="row">
                     {row.Plate}
                   </TableCell>
