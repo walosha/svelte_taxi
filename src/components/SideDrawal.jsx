@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
 import { Drawer, Divider, List } from "@material-ui/core";
-import { mainListItems, secondaryListItems } from "../components/ListItems";
+import { MainListItems, SecondaryListItems } from "../components/ListItems";
 
 const drawerWidth = 230;
 
@@ -28,9 +28,13 @@ export default function SideDrawal() {
       }}
     >
       <Divider />
-      <List>{mainListItems}</List>
+      <List>
+        <MainListItems />
+      </List>
       <Divider />
-      <List>{secondaryListItems}</List>
+      <List>
+        <SecondaryListItems />
+      </List>
     </Drawer>
   );
 }

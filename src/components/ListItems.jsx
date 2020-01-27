@@ -24,14 +24,14 @@ const StyledLink = styled(NavLink)`
   text-decoration: none;
 `;
 
-export const mainListItems = (
+export const MainListItems = () => (
   <Fragment>
     <StyledLink to="/dashboard">
-      <ListItem button>
+      <ListItem selected={true} button>
         <ListItemIcon>
           <Home />
         </ListItemIcon>
-        <ListItemText primary="Home" />
+        <ListItemText primary="DashBoard" />
       </ListItem>
     </StyledLink>
     <StyledLink to="/vehicles">
@@ -117,7 +117,7 @@ export const mainListItems = (
   </Fragment>
 );
 
-export const secondaryListItems = (
+export const SecondaryListItems = () => (
   <StyledLink color="primary" to="/">
     <ListItem button>
       <ListItemIcon>
