@@ -40,3 +40,25 @@ export const cardData = [
     colorLight: "#d3caad"
   }
 ];
+export const notificationData = [
+  {
+    title: "Total Messages",
+    amount: "905,765",
+    bg: "green"
+  },
+  {
+    title: "Total Recipients",
+    amount: "5,75",
+    bg: "blue"
+  },
+  {
+    title: "In-App Notification",
+    amount: "11,765",
+    bg: "#e909f4"
+  },
+  {
+    title: "SMS and Email Notification ",
+    amount: "100,765",
+    bg: "#e5af0d"
+  }
+];

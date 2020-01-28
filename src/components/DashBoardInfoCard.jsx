@@ -40,39 +40,47 @@ export default function DashBoardInfoCard({
   icon,
   colorDark,
   colorLight,
-  percentChange
+  percentChange,
+  bg
 }) {
   const classes = useStyles();
 
+  bg = bg ? { background: bg, color: "#fff" } : {};
+
   return (
-    <Card className={classes.card}>
+    <Card style={bg} className={classes.card}>
       <CardContent className={classes.MuiCardContent}>
         <div className={classes.textContent}>
           <Typography
             className={classes.title}
             color="textSecondary"
             gutterBottom
+            style={bg}
           >
             {title}
           </Typography>
           <Typography gutterBottom variant="h5" component="h3">
             {amount}
           </Typography>
-          <div className={classes.indicator}>
-            <Add />
-            <CallMade />
-            <Typography variant="body2" component="p">
-              {`${percentChange}%`}
-            </Typography>
-          </div>
+          {percentChange ? (
+            <div className={classes.indicator}>
+              <Add />
+              <CallMade />
+              <Typography variant="body2" component="p">
+                {`${percentChange}%`}
+              </Typography>
+            </div>
+          ) : null}
         </div>
-        <Box
-          style={{ color: colorDark, background: colorLight }}
-          className={classes.iconContainer}
-          clone
-        >
-          {icon}
-        </Box>
+        {icon ? (
+          <Box
+            style={{ color: colorDark, background: colorLight }}
+            className={classes.iconContainer}
+            clone
+          >
+            {icon}
+          </Box>
+        ) : null}
       </CardContent>
     </Card>
   );
