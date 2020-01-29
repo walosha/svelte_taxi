@@ -1,14 +1,21 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Grid, Typography, Container } from "@material-ui/core";
+import { Grid, Typography, Container, Paper } from "@material-ui/core";
 import DashBoardInfoCard from "../components/DashBoardInfoCard";
 import { notificationData } from "../data/cardData";
+import { lineData } from "../data/lineChartData";
+import {
+  BarChart,
+  Legend,
+  Bar,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Tooltip
+} from "recharts";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    display: "flex"
-  },
-  content: {
     flexGrow: 1,
     height: "100vh",
     overflow: "auto",
@@ -17,6 +24,10 @@ const useStyles = makeStyles(theme => ({
   container: {
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(4)
+  },
+  paper: {
+    padding: theme.spacing(4),
+    marginTop: theme.spacing(5)
   }
 }));
 
@@ -24,15 +35,15 @@ export default function PushNotifications() {
   const classes = useStyles();
 
   return (
-    <main className={classes.content}>
+    <main className={classes.root}>
       <Container maxWidth="lg" className={classes.container}>
         <Grid container spacing={3}>
           <Grid item xs={12}>
-            <Typography variant="h4">Administrator Dashboard</Typography>
+            <Typography variant="h4">Push Notification</Typography>
           </Grid>
           <Grid item xs={12}>
             <Typography variant="subtitle2">
-              Manage Drivers And Customers with Ease From One Place
+              Send Notifications to users and drivers on the Platform
             </Typography>
           </Grid>
           {notificationData.map((data, idx) => (
@@ -40,6 +51,20 @@ export default function PushNotifications() {
               <DashBoardInfoCard {...data} />
             </Grid>
           ))}
+
+          <Grid item xs={12} md={12} lg={10}>
+            <Paper className={classes.paper}>
+              <BarChart width={730} height={250} data={lineData}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="pv" fill="#8884d8" />
+                <Bar dataKey="uv" fill="#82ca9d" />
+              </BarChart>
+            </Paper>
+          </Grid>
         </Grid>
       </Container>
     </main>
