@@ -36,7 +36,10 @@ function HomePage() {
           <Route path="/Analytics" component={Analytics}></Route>
           <Route path="/customers" component={Customers}></Route>
           <Route path="/payments" component={Payments}></Route>
-          <Route path="/notifications" component={PushNotifications}></Route>
+          <Route
+            path="/push-notifications"
+            component={PushNotifications}
+          ></Route>
           <Route path="/rides" component={Rides}></Route>
           <Route path="/settings" component={Settings}></Route>
           <Route path="/support-tickets" component={SupportTickets}></Route>
