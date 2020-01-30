@@ -21,7 +21,7 @@ const useStyles = makeStyles({
   }
 });
 
-function Account() {
+function HomePage() {
   const classes = useStyles();
   return (
     <Fragment>
@@ -46,4 +46,4 @@ function Account() {
   );
 }
 
-export default Account;
+export default HomePage;

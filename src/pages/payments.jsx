@@ -1,17 +1,12 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import {
-  Typography,
-  Container,
-  Paper,
-  TableRow,
-  TableCell
-} from "@material-ui/core";
+import { Container, Paper, TableRow, TableCell } from "@material-ui/core";
 import DashBoardInfoCard from "../components/DashBoardInfoCard";
 import DataTable from "../components/Tables";
 import { customersData } from ".././data/customerData";
 import { notificationData } from ".././data/cardData";
+import SectionHeader from "../components/SectionHeader";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -48,14 +43,10 @@ export default function Payments() {
     <main className={classes.content}>
       <Container maxWidth="lg" className={classes.container}>
         <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <Typography variant="h4">Payments</Typography>
-          </Grid>
-          <Grid item xs={12}>
-            <Typography variant="subtitle2">
-              Kepp Track Of All Earnings On This Platform
-            </Typography>
-          </Grid>
+          <SectionHeader
+            title="Payments"
+            content=" Kepp Track Of All Earnings On This Platform"
+          />
           {notificationData.map((data, idx) => (
             <Grid key={idx} item xs={12} sm={6} md={3}>
               <DashBoardInfoCard {...data} />

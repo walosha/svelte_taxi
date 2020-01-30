@@ -1,17 +1,12 @@
 import React from "react";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import {
-  Typography,
-  Container,
-  Paper,
-  TableRow,
-  TableCell
-} from "@material-ui/core";
+import { Container, Paper, TableRow, TableCell } from "@material-ui/core";
 import InputBase from "@material-ui/core/InputBase";
 import SearchIcon from "@material-ui/icons/Search";
 import DataTable from "../components/Tables";
 import { vehicleData } from "../data/vehicledata";
+import SectionHeader from "../components/SectionHeader";
 import ControlledOpenSelect from "../components/Select";
 
 const headingItems = [
@@ -85,10 +80,10 @@ export default function Vehicles() {
       <Container maxWidth="lg" className={classes.container}>
         <Grid container spacing={5}>
           <Grid item md={5}>
-            <Typography variant="h4">Vehicle Management</Typography>
-            <Typography variant="subtitle2">
-              Manage All Registered Vehicle on the platform here
-            </Typography>
+            <SectionHeader
+              title="Vehicle Management"
+              content="Manage All Registered Vehicle on the platform here"
+            />
           </Grid>
           <Grid item md={7}>
             <Grid item md={3}>

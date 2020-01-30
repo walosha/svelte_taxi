@@ -1,17 +1,12 @@
 import React from "react";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import {
-  Typography,
-  Container,
-  Paper,
-  TableRow,
-  TableCell
-} from "@material-ui/core";
+import { Container, Paper, TableRow, TableCell } from "@material-ui/core";
 import InputBase from "@material-ui/core/InputBase";
 import SearchIcon from "@material-ui/icons/Search";
 import DataTable from "../components/Tables";
 import { ridesData } from "../data/ridesData";
+import SectionHeader from "../components/SectionHeader";
 
 const headingItems = [
   "Shipping ID",
@@ -84,10 +79,10 @@ export default function Rides() {
       <Container maxWidth="lg" className={classes.container}>
         <Grid container spacing={5}>
           <Grid item md={5}>
-            <Typography variant="h4">Rides and Trip Management</Typography>
-            <Typography variant="subtitle2">
-              Manage All Rides on the platform here
-            </Typography>
+            <SectionHeader
+              title="Rides and Trip Management"
+              content="Manage All Rides on the platform here"
+            />
           </Grid>
           <Grid item md={7}>
             <Grid item md={3}>

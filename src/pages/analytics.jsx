@@ -7,6 +7,7 @@ import { RenderLineChart } from "../components/chart";
 import ProgressBar from "../components/ProgessBar";
 import { analyticsData } from ".././data/cardData";
 import { lineData } from ".././data/lineChartData";
+import SectionHeader from "../components/SectionHeader";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -33,14 +34,10 @@ export default function Analytics() {
     <main className={classes.content}>
       <Container maxWidth="lg" className={classes.container}>
         <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <Typography variant="h4">Analytics</Typography>
-          </Grid>
-          <Grid item xs={12}>
-            <Typography variant="subtitle2">
-              Manage users And Drivers On This Platform
-            </Typography>
-          </Grid>
+          <SectionHeader
+            title="Analytics"
+            content="Manage users And Drivers On This Platform"
+          />
           {analyticsData.map((data, idx) => (
             <Grid key={idx} item xs={12} sm={6} md={3}>
               <DashBoardInfoCard {...data} />
