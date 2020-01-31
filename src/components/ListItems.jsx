@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { NavLink } from "react-router-dom";
-import styled from "styled-components";
 import ListItem from "@material-ui/core/ListItem";
+import { styled } from "@material-ui/core/styles";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
@@ -19,10 +19,12 @@ import {
 } from "@material-ui/icons";
 import BarChartIcon from "@material-ui/icons/BarChart";
 
-const StyledLink = styled(NavLink)`
-  color: #19857b;
-  text-decoration: none;
-`;
+const StyledLink = styled(NavLink)({
+  color: "#19857b",
+  textDecoration: "none"
+});
+
+//Navigation Menu and setting Dashobaord to true on load
 
 const menus = [
   { name: "DashBoard", state: true, icons: <Home /> },
