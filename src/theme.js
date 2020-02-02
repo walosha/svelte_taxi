@@ -14,8 +14,7 @@ const theme = createMuiTheme({
     },
     background: {
       default: "#fff"
-    },
-    divider: "#19857b"
+    }
   }
 });
 

@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
-import { Tabs, Tab, Button, Typography } from "@material-ui/core";
+import {
+  Tabs,
+  Tab,
+  Button,
+  Typography,
+  FormGroup,
+  FormControlLabel,
+  Switch
+} from "@material-ui/core";
 import { Grid } from "@material-ui/core";
 import Box from "@material-ui/core/Box";
 import InputField from "../components/TextField";
@@ -53,10 +61,19 @@ const useStyles = makeStyles(theme => ({
 
 export default function VerticalTabs() {
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
+  const [state, setState] = useState({
+    checkedA: true,
+    checkedB: true,
+    checkedC: true
+  });
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+  };
+
+  const handleSwitchChange = name => event => {
+    setState({ ...state, [name]: event.target.checked });
   };
 
   return (
@@ -107,7 +124,53 @@ export default function VerticalTabs() {
         </Grid>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        <Grid container justify="center" spacing={3}>
+          <SectionHeader title="Notifications" content=" " />
+          <FormGroup row>
+            <Grid item md={8}>
+              <FormControlLabel
+                label="Automatically sends Users an email anaytime they log in "
+                labelPlacement="start"
+                control={
+                  <Switch
+                    checked={state.checkedA}
+                    onChange={handleSwitchChange("checkedA")}
+                    value="checkedA"
+                    color="primary"
+                  />
+                }
+              />
+            </Grid>
+            <Grid item md={8}>
+              <FormControlLabel
+                labelPlacement="start"
+                control={
+                  <Switch
+                    checked={state.checkedB}
+                    onChange={handleSwitchChange("checkedB")}
+                    value="checkedB"
+                    color="primary"
+                  />
+                }
+                label="Sengs Users important Update via Email and SMS"
+              />
+            </Grid>
+            <Grid item md={8} spacing={5}>
+              <FormControlLabel
+                labelPlacement="start"
+                control={
+                  <Switch
+                    checked={state.checkedC}
+                    onChange={handleSwitchChange("checkedB")}
+                    value="checkedB"
+                    color="primary"
+                  />
+                }
+                label="Sends SMS Notification to Administrator"
+              />
+            </Grid>
+          </FormGroup>
+        </Grid>
       </TabPanel>
       <TabPanel value={value} index={3}>
         Item Four
