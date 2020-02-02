@@ -12,7 +12,10 @@ const theme = createMuiTheme({
     error: {
       main: purple.A100
     },
-    background: { default: "#fff" }
+    background: {
+      default: "#fff"
+    },
+    divider: "#19857b"
   }
 });
 
