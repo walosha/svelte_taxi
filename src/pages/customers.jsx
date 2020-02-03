@@ -77,12 +77,11 @@ export default function Customers() {
     <main className={classes.content}>
       <Container maxWidth="lg" className={classes.container}>
         <Grid container spacing={5}>
-          <Grid item md={5}>
-            <SectionHeader
-              title="Customer Management"
-              content="Manage All Registered Customer on the platform her"
-            />
-          </Grid>
+          <SectionHeader
+            title="Customer Management"
+            content="Manage All Registered Customer on the platform her"
+          />
+
           <Grid item md={7}>
             <Grid item md={3}>
               <div className={classes.search}>

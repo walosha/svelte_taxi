@@ -10,10 +10,19 @@ import {
   FormControlLabel,
   Switch
 } from "@material-ui/core";
+import { Link } from "react-router-dom";
 import { Grid } from "@material-ui/core";
 import Box from "@material-ui/core/Box";
 import InputField from "../components/TextField";
 import SectionHeader from "../components/SectionHeader";
+import AdministrativeList from "../components/AdministrativeList";
+
+const adminLists = [
+  { email: "walosha@ysvelte.com", role: "admin", access: "full" },
+  { email: "kola@svelte.com", role: "admin", access: "partial" },
+  { email: "Jamesakin@svelte.com", role: "admin", access: "partial" },
+  { email: "cecilia@svelte.com", role: "admin", access: "full" }
+];
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -56,6 +65,9 @@ const useStyles = makeStyles(theme => ({
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`
+  },
+  role: {
+    flex: 1
   }
 }));
 
@@ -108,19 +120,59 @@ export default function VerticalTabs() {
           </Grid>
         </Grid>
       </TabPanel>
-      <TabPanel value={value} index={1}>
+      <TabPanel className={classes.role} value={value} index={1}>
         <Grid container justify="center" spacing={3}>
-          <Grid item md={8}>
+          <Grid item md={12} align="start">
             <SectionHeader
               title="Roles"
               content="Set Up Administrative Roles for Certain Users Here"
             />
           </Grid>
-          <Grid item md={5}>
-            <Button variant="contained" color="primary">
-              Change Password
-            </Button>
+          <Grid container md={12}>
+            <Grid item md={5} align="start">
+              <Typography
+                color="primary"
+                variant="h6"
+                align="start"
+                gutterBottom
+              >
+                Email
+              </Typography>
+            </Grid>
+            <Grid item md={2} align="start">
+              <Typography
+                color="primary"
+                variant="h6"
+                align="start"
+                gutterBottom
+              >
+                Roles
+              </Typography>
+            </Grid>
+            <Grid item md={2} align="start">
+              <Typography
+                color="primary"
+                variant="h6"
+                align="start"
+                gutterBottom
+              >
+                Access Level
+              </Typography>
+            </Grid>
+            <Grid item md={3} align="start">
+              <Typography
+                color="primary"
+                variant="h6"
+                align="center"
+                gutterBottom
+              >
+                {"                   "}
+              </Typography>
+            </Grid>
           </Grid>
+          {adminLists.map(admin => (
+            <AdministrativeList {...admin} />
+          ))}
         </Grid>
       </TabPanel>
       <TabPanel value={value} index={2}>
@@ -161,8 +213,8 @@ export default function VerticalTabs() {
                 control={
                   <Switch
                     checked={state.checkedC}
-                    onChange={handleSwitchChange("checkedB")}
-                    value="checkedB"
+                    onChange={handleSwitchChange("checkedC")}
+                    value="checkedC"
                     color="primary"
                   />
                 }
@@ -173,7 +225,7 @@ export default function VerticalTabs() {
         </Grid>
       </TabPanel>
       <TabPanel value={value} index={3}>
-        Item Four
+        <Link to="/">Log Out</Link>
       </TabPanel>
     </div>
   );

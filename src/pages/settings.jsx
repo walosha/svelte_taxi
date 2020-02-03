@@ -67,12 +67,11 @@ export default function Settings() {
     <main className={classes.content}>
       <Container maxWidth="lg" className={classes.container}>
         <Grid container spacing={5}>
-          <Grid item md={5}>
-            <SectionHeader
-              title="Settings"
-              content="Management Settings For This Platform"
-            />
-          </Grid>
+          <SectionHeader
+            title="Settings"
+            content="Management Settings For This Platform"
+          />
+
           <Grid item md={7}>
             <Grid item md={3}>
               <div className={classes.search}>
