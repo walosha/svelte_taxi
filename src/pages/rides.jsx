@@ -78,12 +78,12 @@ export default function Rides() {
     <main className={classes.content}>
       <Container maxWidth="lg" className={classes.container}>
         <Grid container spacing={5}>
-          <Grid item md={5}>
+          
             <SectionHeader
               title="Rides and Trip Management"
               content="Manage All Rides on the platform here"
             />
-          </Grid>
+          
           <Grid item md={7}>
             <Grid item md={3}>
               <div className={classes.search}>

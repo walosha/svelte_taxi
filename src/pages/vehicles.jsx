@@ -1,7 +1,14 @@
 import React from "react";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import { Container, Paper, TableRow, TableCell } from "@material-ui/core";
+import {
+  Container,
+  Paper,
+  TableRow,
+  TableCell,
+  Button
+} from "@material-ui/core";
+import { KeyboardArrowDownSharp } from "@material-ui/icons";
 import InputBase from "@material-ui/core/InputBase";
 import SearchIcon from "@material-ui/icons/Search";
 import DataTable from "../components/Tables";
@@ -119,7 +126,15 @@ export default function Vehicles() {
                   <TableCell align="right">{row.driver}</TableCell>
                   <TableCell align="right">{row.city}</TableCell>
                   <TableCell align="right">{row.status}</TableCell>
-                  <TableCell align="right">{row.track}</TableCell>
+                  <TableCell align="right">
+                    {" "}
+                    <Button
+                      endIcon={<KeyboardArrowDownSharp />}
+                      variant="contained"
+                    >
+                      Track
+                    </Button>
+                  </TableCell>
                 </TableRow>
               ))}
             </DataTable>
