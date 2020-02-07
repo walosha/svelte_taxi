@@ -4,12 +4,12 @@ import { Grid, Button, Typography } from "@material-ui/core";
 export default function AdministrativeList({ email, role, access }) {
   return (
     <Fragment>
-      <Grid item md={5} align="start">
+      <Grid item md={4} align="start">
         <Typography
           color="primary"
           component="p"
           variant="subtitle2"
-          align="start"
+          align="left"
           gutterBottom
         >
           {email}
@@ -20,7 +20,7 @@ export default function AdministrativeList({ email, role, access }) {
           color="primary"
           component="p"
           variant="subtitle2"
-          align="start"
+          align="left"
           gutterBottom
         >
           {role}
@@ -31,23 +31,20 @@ export default function AdministrativeList({ email, role, access }) {
           color="primary"
           component="p"
           variant="subtitle2"
-          align="start"
+          align="left"
           gutterBottom
         >
           {access}
         </Typography>
       </Grid>
-      <Grid container md={3} spacing={2} align="start">
-        <Grid item>
-          <Button color="primary" variant="outlined">
-            Edit
-          </Button>
-        </Grid>
-        <Grid item>
-          <Button color="primary" variant="contained">
-            Delete
-          </Button>
-        </Grid>
+      <Grid container align="start">
+        <Button color="primary" variant="outlined">
+          Edit
+        </Button>
+
+        <Button color="primary" variant="contained">
+          Delete
+        </Button>
       </Grid>
     </Fragment>
   );

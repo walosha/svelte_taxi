@@ -128,12 +128,12 @@ export default function VerticalTabs() {
               content="Set Up Administrative Roles for Certain Users Here"
             />
           </Grid>
-          <Grid container md={12}>
+          <Grid item container md={12}>
             <Grid item md={5} align="start">
               <Typography
                 color="primary"
                 variant="h6"
-                align="start"
+                align="left"
                 gutterBottom
               >
                 Email
@@ -143,7 +143,7 @@ export default function VerticalTabs() {
               <Typography
                 color="primary"
                 variant="h6"
-                align="start"
+                align="left"
                 gutterBottom
               >
                 Roles
@@ -153,7 +153,7 @@ export default function VerticalTabs() {
               <Typography
                 color="primary"
                 variant="h6"
-                align="start"
+                align="left"
                 gutterBottom
               >
                 Access Level
@@ -170,8 +170,8 @@ export default function VerticalTabs() {
               </Typography>
             </Grid>
           </Grid>
-          {adminLists.map(admin => (
-            <AdministrativeList {...admin} />
+          {adminLists.map((admin, key) => (
+            <AdministrativeList key={key} {...admin} />
           ))}
         </Grid>
       </TabPanel>
@@ -207,7 +207,7 @@ export default function VerticalTabs() {
                 label="Sengs Users important Update via Email and SMS"
               />
             </Grid>
-            <Grid item md={8} spacing={5}>
+            <Grid container spacing={5}>
               <FormControlLabel
                 labelPlacement="start"
                 control={
