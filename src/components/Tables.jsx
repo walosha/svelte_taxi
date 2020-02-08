@@ -22,7 +22,7 @@ export default function DataTable({ children, header }) {
         <TableHead>
           <TableRow style={{ background: "#19857b" }}>
             {header.map((item, key) => (
-              <TableCell key={key} align="right">
+              <TableCell key={key} align="center">
                 <Typography style={{ color: "#fff" }} variant="subtitle2">
                   {item}
                 </Typography>

@@ -116,11 +116,11 @@ export default function Vehicles() {
                     {row.Plate}
                   </TableCell>
                   <TableCell align="right">{row.vehID}</TableCell>
-                  <TableCell align="right">{row.trip}</TableCell>
+                  <TableCell align="center">{row.trip}</TableCell>
                   <TableCell align="right">{row.driver}</TableCell>
                   <TableCell align="right">{row.city}</TableCell>
                   <TableCell align="right">{row.status}</TableCell>
-                  <TableCell align="right">
+                  <TableCell align="left">
                     <DropDownButton />
                   </TableCell>
                 </TableRow>
