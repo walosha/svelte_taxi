@@ -7,6 +7,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import DataTable from "../components/Tables";
 import { driversData } from "../data/driversData";
 import ControlledOpenSelect from "../components/Select";
+import DropDownButton from "../components/DropDownButton";
 import SectionHeader from "../components/SectionHeader";
 
 const useStyles = makeStyles(theme => ({
@@ -117,7 +118,9 @@ export default function Drivers() {
                   <TableCell align="right">{driver.vehicleNo}</TableCell>
                   <TableCell align="right">{driver.city}</TableCell>
                   <TableCell align="right">{driver.status}</TableCell>
-                  <TableCell align="right">{driver.action}</TableCell>
+                  <TableCell align="right">
+                    <DropDownButton />
+                  </TableCell>
                 </TableRow>
               ))}
             </DataTable>

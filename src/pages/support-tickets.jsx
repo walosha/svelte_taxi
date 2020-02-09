@@ -6,6 +6,7 @@ import InputBase from "@material-ui/core/InputBase";
 import SearchIcon from "@material-ui/icons/Search";
 import DataTable from "../components/Tables";
 import SectionHeader from "../components/SectionHeader";
+import DropDownButton from "../components/DropDownButton";
 import { ticketData } from "../data/supportData";
 
 const headingItems = [
@@ -110,7 +111,9 @@ export default function SupportTickets() {
                   <TableCell align="right">{ticket.issueReported}</TableCell>
                   <TableCell align="right">{ticket.driverReport}</TableCell>
                   <TableCell align="right">{ticket.status}</TableCell>
-                  <TableCell align="right">{ticket.action}</TableCell>
+                  <TableCell align="right">
+                    <DropDownButton />
+                  </TableCell>
                 </TableRow>
               ))}
             </DataTable>

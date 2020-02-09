@@ -6,6 +6,7 @@ import InputBase from "@material-ui/core/InputBase";
 import SearchIcon from "@material-ui/icons/Search";
 import DataTable from "../components/Tables";
 import SectionHeader from "../components/SectionHeader";
+import DropDownButton from "../components/DropDownButton";
 import { customersData } from "../data/customerData";
 
 const headingItems = [
@@ -110,7 +111,9 @@ export default function Customers() {
                   <TableCell align="right">{customer.trips}</TableCell>
                   <TableCell align="right">{customer.phone}</TableCell>
                   <TableCell align="right">{customer.city}</TableCell>
-                  <TableCell align="right">{customer.action}</TableCell>
+                  <TableCell align="right">
+                    <DropDownButton />
+                  </TableCell>
                 </TableRow>
               ))}
             </DataTable>

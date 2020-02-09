@@ -6,6 +6,7 @@ import InputBase from "@material-ui/core/InputBase";
 import SearchIcon from "@material-ui/icons/Search";
 import DataTable from "../components/Tables";
 import SectionHeader from "../components/SectionHeader";
+import DropDownButton from "../components/DropDownButton";
 import { loanData } from "../data/loanData";
 
 const headingItems = [
@@ -113,7 +114,9 @@ export default function Loans() {
                   <TableCell align="right">{loan.DriverName}</TableCell>
                   <TableCell align="right">{loan.DateDisbursed}</TableCell>
                   <TableCell align="right">{loan.PaymentMethod}</TableCell>
-                  <TableCell align="right">{loan.Action}</TableCell>
+                  <TableCell align="right">
+                    <DropDownButton />
+                  </TableCell>
                 </TableRow>
               ))}
             </DataTable>

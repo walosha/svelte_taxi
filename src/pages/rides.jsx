@@ -7,6 +7,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import DataTable from "../components/Tables";
 import { ridesData } from "../data/ridesData";
 import SectionHeader from "../components/SectionHeader";
+import DropDownButton from "../components/DropDownButton";
 
 const headingItems = [
   "Shipping ID",
@@ -78,12 +79,11 @@ export default function Rides() {
     <main className={classes.content}>
       <Container maxWidth="lg" className={classes.container}>
         <Grid container spacing={5}>
-          
-            <SectionHeader
-              title="Rides and Trip Management"
-              content="Manage All Rides on the platform here"
-            />
-          
+          <SectionHeader
+            title="Rides and Trip Management"
+            content="Manage All Rides on the platform here"
+          />
+
           <Grid item md={7}>
             <Grid item md={3}>
               <div className={classes.search}>
@@ -113,7 +113,9 @@ export default function Rides() {
                   <TableCell align="right">{ride.driver}</TableCell>
                   <TableCell align="right">{ride.city}</TableCell>
                   <TableCell align="right">{ride.status}</TableCell>
-                  <TableCell align="right">{ride.action}</TableCell>
+                  <TableCell align="right">
+                    <DropDownButton />
+                  </TableCell>
                 </TableRow>
               ))}
             </DataTable>

@@ -4,7 +4,8 @@ import Grid from "@material-ui/core/Grid";
 import { Container, Paper, TableRow, TableCell } from "@material-ui/core";
 import DashBoardInfoCard from "../components/DashBoardInfoCard";
 import DataTable from "../components/Tables";
-import { customersData } from ".././data/customerData";
+import DropDownButton from "../components/DropDownButton";
+import { paymentData } from ".././data/paymentData";
 import { notificationData } from ".././data/cardData";
 import SectionHeader from "../components/SectionHeader";
 
@@ -28,12 +29,12 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const tableHeader = [
-  "Driver Id",
-  "Name",
-  "Trips",
-  "Tehicle No",
-  "City",
-  "Status",
+  "Payment Id",
+  "Driver's Name",
+  "Amount Earned",
+  "Amount Paid",
+  "Pending Payment",
+  "Last Payment",
   "Action"
 ];
 
@@ -55,14 +56,19 @@ export default function Payments() {
           <Grid className={classes.paper} item md={12}>
             <Paper elevation={3}>
               <DataTable header={tableHeader}>
-                {customersData.map((customer, key) => (
+                {paymentData.map((payment, key) => (
                   <TableRow key={key}>
-                    <TableCell align="right">{customer.customerId}</TableCell>
-                    <TableCell align="right">{customer.name}</TableCell>
-                    <TableCell align="right">{customer.trips}</TableCell>
-                    <TableCell align="right">{customer.phone}</TableCell>
-                    <TableCell align="right">{customer.city}</TableCell>
-                    <TableCell align="right">{customer.action}</TableCell>
+                    <TableCell align="right">{payment.PaymentId}</TableCell>
+                    <TableCell align="right">{payment.DriverName}</TableCell>
+                    <TableCell align="right">{payment.AmountEarned}</TableCell>
+                    <TableCell align="right">{payment.AmountPaid}</TableCell>
+                    <TableCell align="right">
+                      {payment.PendingPayment}
+                    </TableCell>
+                    <TableCell align="right">{payment.LastPayment}</TableCell>
+                    <TableCell align="right">
+                      <DropDownButton />
+                    </TableCell>
                   </TableRow>
                 ))}
               </DataTable>

@@ -9,6 +9,7 @@ import Paper from "@material-ui/core/Paper";
 import Popper from "@material-ui/core/Popper";
 import MenuItem from "@material-ui/core/MenuItem";
 import MenuList from "@material-ui/core/MenuList";
+import { default as Dialog } from "../components/DialogBox";
 
 const options = ["View", "Edit", "Delete"];
 
@@ -16,9 +17,10 @@ export default function DropDownButton() {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
   const [selectedIndex, setSelectedIndex] = React.useState(0);
+  const [openDialog, setOpenDialog] = React.useState(false);
 
   const handleClick = () => {
-    console.info(`You clicked ${options[selectedIndex]}`);
+    setOpenDialog(true);
   };
 
   const handleMenuItemClick = (event, index) => {
@@ -40,6 +42,10 @@ export default function DropDownButton() {
 
   return (
     <Grid container direction="column" alignItems="center">
+      <Dialog
+        setOpenDialog={setOpenDialog}
+        isOpen={openDialog && options[selectedIndex] === "View"}
+      />
       <Grid item xs={12}>
         <ButtonGroup
           variant="contained"
