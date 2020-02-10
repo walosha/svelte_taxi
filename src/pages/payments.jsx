@@ -57,7 +57,7 @@ export default function Payments() {
             <Paper elevation={3}>
               <DataTable header={tableHeader}>
                 {paymentData.map((payment, key) => (
-                  <TableRow key={key}>
+                  <TableRow hover={true} key={key}>
                     <TableCell align="right">{payment.PaymentId}</TableCell>
                     <TableCell align="right">{payment.DriverName}</TableCell>
                     <TableCell align="right">{payment.AmountEarned}</TableCell>
