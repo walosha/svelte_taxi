@@ -9,6 +9,7 @@ import DataTable from "../components/Tables";
 import { vehicleData } from "../data/vehicledata";
 import SectionHeader from "../components/SectionHeader";
 import ControlledOpenSelect from "../components/Select";
+import Pagination from "../components/Pagination";
 
 const headingItems = [
   "Vehicle ID",
@@ -107,7 +108,7 @@ export default function Vehicles() {
                 <ControlledOpenSelect label={<span>Sorting: </span>} />
               </Grid>
               <Grid item md={4}>
-                <ControlledOpenSelect />
+                <Pagination />{" "}
               </Grid>
             </Grid>
           </Grid>
