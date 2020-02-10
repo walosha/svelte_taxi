@@ -8,6 +8,8 @@ import DataTable from "../components/Tables";
 import SectionHeader from "../components/SectionHeader";
 import DropDownButton from "../components/DropDownButton";
 import { loanData } from "../data/loanData";
+import ControlledOpenSelect from "../components/Select";
+import Pagination from "../components/Pagination";
 
 const headingItems = [
   "Loan ID",
@@ -86,20 +88,30 @@ export default function Loans() {
             />
           </Grid>
           <Grid item md={7}>
-            <Grid item md={3}>
-              <div className={classes.search}>
-                <div className={classes.searchIcon}>
-                  <SearchIcon />
-                </div>
-                <InputBase
-                  placeholder="Search…"
-                  classes={{
-                    root: classes.inputRoot,
-                    input: classes.inputInput
-                  }}
-                  inputProps={{ "aria-label": "search" }}
-                />
-              </div>
+            <Grid item md={8}>
+              <Grid container>
+                <Grid item md={3}>
+                  <div className={classes.search}>
+                    <div className={classes.searchIcon}>
+                      <SearchIcon />
+                    </div>
+                    <InputBase
+                      placeholder="Search…"
+                      classes={{
+                        root: classes.inputRoot,
+                        input: classes.inputInput
+                      }}
+                      inputProps={{ "aria-label": "search" }}
+                    />
+                  </div>
+                </Grid>
+                <Grid item md={5}>
+                  <ControlledOpenSelect label={<span>Sorting: </span>} />
+                </Grid>
+                <Grid item md={4}>
+                  <Pagination />{" "}
+                </Grid>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
@@ -107,7 +119,7 @@ export default function Loans() {
           <Paper elevation={3}>
             <DataTable header={headingItems}>
               {loanData.map((loan, key) => (
-                <TableRow key={key}>
+                <TableRow hover={true} key={key}>
                   <TableCell align="right">{loan.LoanID}</TableCell>
                   <TableCell align="right">{loan.Amount}</TableCell>
                   <TableCell align="right">{loan.Interest}</TableCell>

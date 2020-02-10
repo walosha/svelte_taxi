@@ -8,6 +8,8 @@ import DataTable from "../components/Tables";
 import SectionHeader from "../components/SectionHeader";
 import DropDownButton from "../components/DropDownButton";
 import { ticketData } from "../data/supportData";
+import ControlledOpenSelect from "../components/Select";
+import Pagination from "../components/Pagination";
 
 const headingItems = [
   "Ticket ID",
@@ -78,7 +80,7 @@ export default function SupportTickets() {
   return (
     <main className={classes.content}>
       <Container maxWidth="lg" className={classes.container}>
-        <Grid container spacing={3}>
+        <Grid container spacing={5}>
           <Grid item md={5}>
             <SectionHeader
               title="Support Tickets"
@@ -86,21 +88,29 @@ export default function SupportTickets() {
             />
           </Grid>
           <Grid item md={7}>
-            <Grid container>
-              <Grid item md={3}>
-                <div className={classes.search}>
-                  <div className={classes.searchIcon}>
-                    <SearchIcon />
+            <Grid item md={8}>
+              <Grid container>
+                <Grid item md={3}>
+                  <div className={classes.search}>
+                    <div className={classes.searchIcon}>
+                      <SearchIcon />
+                    </div>
+                    <InputBase
+                      placeholder="Search…"
+                      classes={{
+                        root: classes.inputRoot,
+                        input: classes.inputInput
+                      }}
+                      inputProps={{ "aria-label": "search" }}
+                    />
                   </div>
-                  <InputBase
-                    placeholder="Search…"
-                    classes={{
-                      root: classes.inputRoot,
-                      input: classes.inputInput
-                    }}
-                    inputProps={{ "aria-label": "search" }}
-                  />
-                </div>
+                </Grid>
+                <Grid item md={5}>
+                  <ControlledOpenSelect label={<span>Sorting: </span>} />
+                </Grid>
+                <Grid item md={4}>
+                  <Pagination />{" "}
+                </Grid>
               </Grid>
             </Grid>
           </Grid>

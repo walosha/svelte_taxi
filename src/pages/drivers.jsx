@@ -9,6 +9,7 @@ import { driversData } from "../data/driversData";
 import ControlledOpenSelect from "../components/Select";
 import DropDownButton from "../components/DropDownButton";
 import SectionHeader from "../components/SectionHeader";
+import Pagination from "../components/Pagination";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -87,23 +88,30 @@ export default function Drivers() {
             />
           </Grid>
           <Grid item md={7}>
-            <Grid item md={3}>
-              <div className={classes.search}>
-                <div className={classes.searchIcon}>
-                  <SearchIcon />
-                </div>
-                <InputBase
-                  placeholder="Search…"
-                  classes={{
-                    root: classes.inputRoot,
-                    input: classes.inputInput
-                  }}
-                  inputProps={{ "aria-label": "search" }}
-                />
-              </div>
-            </Grid>
-            <Grid item md={3}>
-              <ControlledOpenSelect />
+            <Grid item md={8}>
+              <Grid container>
+                <Grid item md={3}>
+                  <div className={classes.search}>
+                    <div className={classes.searchIcon}>
+                      <SearchIcon />
+                    </div>
+                    <InputBase
+                      placeholder="Search…"
+                      classes={{
+                        root: classes.inputRoot,
+                        input: classes.inputInput
+                      }}
+                      inputProps={{ "aria-label": "search" }}
+                    />
+                  </div>
+                </Grid>
+                <Grid item md={5}>
+                  <ControlledOpenSelect label={<span>Sorting: </span>} />
+                </Grid>
+                <Grid item md={4}>
+                  <Pagination />{" "}
+                </Grid>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
@@ -111,7 +119,7 @@ export default function Drivers() {
           <Paper elevation={3}>
             <DataTable header={tableHeader}>
               {driversData.map((driver, key) => (
-                <TableRow key={key}>
+                <TableRow hover={true} key={key}>
                   <TableCell align="right">{driver.driverId}</TableCell>
                   <TableCell align="right">{driver.name}</TableCell>
                   <TableCell align="right">{driver.trips}</TableCell>

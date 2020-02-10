@@ -8,6 +8,8 @@ import DataTable from "../components/Tables";
 import SectionHeader from "../components/SectionHeader";
 import DropDownButton from "../components/DropDownButton";
 import { customersData } from "../data/customerData";
+import ControlledOpenSelect from "../components/Select";
+import Pagination from "../components/Pagination";
 
 const headingItems = [
   "Customer ID",
@@ -78,26 +80,37 @@ export default function Customers() {
     <main className={classes.content}>
       <Container maxWidth="lg" className={classes.container}>
         <Grid container spacing={5}>
-          <SectionHeader
-            title="Customer Management"
-            content="Manage All Registered Customer on the platform her"
-          />
-
+          <Grid item md={5}>
+            <SectionHeader
+              title="Customer Management"
+              content="Manage All Registered Customer on the platform her"
+            />
+          </Grid>
           <Grid item md={7}>
-            <Grid item md={3}>
-              <div className={classes.search}>
-                <div className={classes.searchIcon}>
-                  <SearchIcon />
-                </div>
-                <InputBase
-                  placeholder="Search…"
-                  classes={{
-                    root: classes.inputRoot,
-                    input: classes.inputInput
-                  }}
-                  inputProps={{ "aria-label": "search" }}
-                />
-              </div>
+            <Grid item md={8}>
+              <Grid container>
+                <Grid item md={3}>
+                  <div className={classes.search}>
+                    <div className={classes.searchIcon}>
+                      <SearchIcon />
+                    </div>
+                    <InputBase
+                      placeholder="Search…"
+                      classes={{
+                        root: classes.inputRoot,
+                        input: classes.inputInput
+                      }}
+                      inputProps={{ "aria-label": "search" }}
+                    />
+                  </div>
+                </Grid>
+                <Grid item md={5}>
+                  <ControlledOpenSelect label={<span>Sorting: </span>} />
+                </Grid>
+                <Grid item md={4}>
+                  <Pagination />{" "}
+                </Grid>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
@@ -105,11 +118,11 @@ export default function Customers() {
           <Paper elevation={3}>
             <DataTable header={headingItems}>
               {customersData.map((customer, key) => (
-                <TableRow key={key}>
-                  <TableCell align="right">{customer.customerId}</TableCell>
-                  <TableCell align="right">{customer.name}</TableCell>
-                  <TableCell align="right">{customer.trips}</TableCell>
-                  <TableCell align="right">{customer.phone}</TableCell>
+                <TableRow hover={true} key={key}>
+                  <TableCell align="center">{customer.customerId}</TableCell>
+                  <TableCell align="center">{customer.name}</TableCell>
+                  <TableCell align="center">{customer.trips}</TableCell>
+                  <TableCell align="center">{customer.phone}</TableCell>
                   <TableCell align="right">{customer.city}</TableCell>
                   <TableCell align="right">
                     <DropDownButton />
