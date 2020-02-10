@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function ControlledOpenSelect() {
+export default function ControlledOpenSelect({ label }) {
   const classes = useStyles();
   const [age, setAge] = useState("");
   const [open, setOpen] = useState(false);
@@ -42,6 +42,7 @@ export default function ControlledOpenSelect() {
         onOpen={handleOpen}
         value={age}
         onChange={handleChange}
+        label={label}
       >
         <MenuItem value="">
           <em>None</em>

@@ -80,30 +80,35 @@ export default function Vehicles() {
     <main className={classes.content}>
       <Container maxWidth="lg" className={classes.container}>
         <Grid container spacing={5}>
-          <Grid item md={5}>
+          <Grid item md={4}>
             <SectionHeader
               title="Vehicle Management"
               content="Manage All Registered Vehicle on the platform here"
             />
           </Grid>
-          <Grid item md={7}>
-            <Grid item md={3}>
-              <div className={classes.search}>
-                <div className={classes.searchIcon}>
-                  <SearchIcon />
+          <Grid item md={8}>
+            <Grid container>
+              <Grid item md={3}>
+                <div className={classes.search}>
+                  <div className={classes.searchIcon}>
+                    <SearchIcon />
+                  </div>
+                  <InputBase
+                    placeholder="Search…"
+                    classes={{
+                      root: classes.inputRoot,
+                      input: classes.inputInput
+                    }}
+                    inputProps={{ "aria-label": "search" }}
+                  />
                 </div>
-                <InputBase
-                  placeholder="Search…"
-                  classes={{
-                    root: classes.inputRoot,
-                    input: classes.inputInput
-                  }}
-                  inputProps={{ "aria-label": "search" }}
-                />
-              </div>
-            </Grid>
-            <Grid item md={3}>
-              <ControlledOpenSelect />
+              </Grid>
+              <Grid item md={5}>
+                <ControlledOpenSelect label={<span>Sorting: </span>} />
+              </Grid>
+              <Grid item md={4}>
+                <ControlledOpenSelect />
+              </Grid>
             </Grid>
           </Grid>
         </Grid>

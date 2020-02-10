@@ -111,9 +111,9 @@ export default function Loans() {
                   <TableCell align="right">{loan.LoanID}</TableCell>
                   <TableCell align="right">{loan.Amount}</TableCell>
                   <TableCell align="right">{loan.Interest}</TableCell>
-                  <TableCell align="right">{loan.DriverName}</TableCell>
-                  <TableCell align="right">{loan.DateDisbursed}</TableCell>
-                  <TableCell align="right">{loan.PaymentMethod}</TableCell>
+                  <TableCell align="center">{loan.DriverName}</TableCell>
+                  <TableCell align="center">{loan.DateDisbursed}</TableCell>
+                  <TableCell align="center">{loan.PaymentMethod}</TableCell>
                   <TableCell align="right">
                     <DropDownButton />
                   </TableCell>

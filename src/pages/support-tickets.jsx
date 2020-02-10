@@ -78,26 +78,31 @@ export default function SupportTickets() {
   return (
     <main className={classes.content}>
       <Container maxWidth="lg" className={classes.container}>
-        <SectionHeader
-          title="Support Tickets"
-          content="Respond To Customers and Drivers Complaints"
-        />
-
-        <Grid item md={7}>
-          <Grid item md={3}>
-            <div className={classes.search}>
-              <div className={classes.searchIcon}>
-                <SearchIcon />
-              </div>
-              <InputBase
-                placeholder="Search…"
-                classes={{
-                  root: classes.inputRoot,
-                  input: classes.inputInput
-                }}
-                inputProps={{ "aria-label": "search" }}
-              />
-            </div>
+        <Grid container spacing={3}>
+          <Grid item md={5}>
+            <SectionHeader
+              title="Support Tickets"
+              content="Respond To Customers and Drivers Complaints"
+            />
+          </Grid>
+          <Grid item md={7}>
+            <Grid container>
+              <Grid item md={3}>
+                <div className={classes.search}>
+                  <div className={classes.searchIcon}>
+                    <SearchIcon />
+                  </div>
+                  <InputBase
+                    placeholder="Search…"
+                    classes={{
+                      root: classes.inputRoot,
+                      input: classes.inputInput
+                    }}
+                    inputProps={{ "aria-label": "search" }}
+                  />
+                </div>
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
         <Grid>
