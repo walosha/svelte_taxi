@@ -14,6 +14,7 @@ import PushNotifications from "./push-notifications";
 import Rides from "./rides";
 import Settings from "./settings";
 import SupportTickets from "./support-tickets";
+import Error404 from "./Error404";
 
 const useStyles = makeStyles({
   root: {
@@ -29,20 +30,25 @@ function HomePage() {
       <div className={classes.root}>
         <SiderDrawal />
         <Switch>
-          <Route path="/dashboard" component={Dashboard}></Route>
-          <Route path="/drivers" component={Drivers}></Route>
-          <Route path="/vehicles" component={Vehicles}></Route>
-          <Route path="/Loans" component={Loans}></Route>
-          <Route path="/Analytics" component={Analytics}></Route>
-          <Route path="/customers" component={Customers}></Route>
-          <Route path="/payments" component={Payments}></Route>
+          <Route exact path="/dashboard" component={Dashboard}></Route>
+          <Route exact path="/drivers" component={Drivers}></Route>
+          <Route exact path="/vehicles" component={Vehicles}></Route>
+          <Route exact path="/Loans" component={Loans}></Route>
+          <Route exact path="/Analytics" component={Analytics}></Route>
+          <Route exact path="/customers" component={Customers}></Route>
+          <Route exact path="/payments" component={Payments}></Route>
           <Route
             path="/push-notifications"
             component={PushNotifications}
           ></Route>
-          <Route path="/rides" component={Rides}></Route>
-          <Route path="/settings" component={Settings}></Route>
-          <Route path="/support-tickets" component={SupportTickets}></Route>
+          <Route exact path="/rides" component={Rides}></Route>
+          <Route exact path="/settings" component={Settings}></Route>
+          <Route
+            exact
+            path="/support-tickets"
+            component={SupportTickets}
+          ></Route>
+          <Route path="/" component={Error404}></Route>
         </Switch>
       </div>
     </Fragment>

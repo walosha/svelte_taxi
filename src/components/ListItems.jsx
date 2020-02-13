@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import { NavLink } from "react-router-dom";
 import ListItem from "@material-ui/core/ListItem";
 import { styled } from "@material-ui/core/styles";
@@ -27,29 +27,29 @@ const StyledLink = styled(NavLink)({
 //Navigation Menu and setting Dashobaord to true on load
 
 const menus = [
-  { name: "DashBoard", state: true, icons: <Home /> },
-  { name: "Vehicles", state: false, icons: <DirectionsBus /> },
-  { name: "Drivers", state: false, icons: <AirlineSeatReclineExtra /> },
-  { name: "Customers", state: false, icons: <People /> },
-  { name: "Rides", state: false, icons: <LocalTaxi /> },
-  { name: "Support Tickets", state: false, icons: <ShoppingCartIcon /> },
-  { name: "Push Notifications", state: false, icons: <NotificationsNone /> },
-  { name: "Loans", state: false, icons: <AccountBalance /> },
-  { name: "Analytics", state: false, icons: <BarChartIcon /> },
-  { name: "Payments", state: false, icons: <PaymentOutlined /> },
-  { name: "Settings", state: false, icons: <Settings /> }
+  { name: "DashBoard", icons: <Home /> },
+  { name: "Vehicles", icons: <DirectionsBus /> },
+  { name: "Drivers", icons: <AirlineSeatReclineExtra /> },
+  { name: "Customers", icons: <People /> },
+  { name: "Rides", icons: <LocalTaxi /> },
+  { name: "Support Tickets", icons: <ShoppingCartIcon /> },
+  { name: "Push Notifications", icons: <NotificationsNone /> },
+  { name: "Loans", icons: <AccountBalance /> },
+  { name: "Analytics", icons: <BarChartIcon /> },
+  { name: "Payments", icons: <PaymentOutlined /> },
+  { name: "Settings", icons: <Settings /> }
 ];
 
 // Rendering of JSX Menus list Items
 
-function RenderMenuItem({ name, selected, icons, state, highlightMenuItem }) {
+function RenderMenuItem({ name, selected, icons }) {
   const url = name
     .split(" ")
     .join("-")
     .toLowerCase();
 
   return (
-    <StyledLink onClick={highlightMenuItem} to={`/${url}`}>
+    <StyledLink to={`/${url}`}>
       <ListItem selected={url === selected} button>
         <ListItemIcon>{icons}</ListItemIcon>
         <ListItemText primary={name} />
@@ -59,37 +59,10 @@ function RenderMenuItem({ name, selected, icons, state, highlightMenuItem }) {
 }
 
 export const MainListItems = ({ selected }) => {
-  const [isSeleted, setSelected] = useState(menus);
-
-  //Remove Highligted Menus
-  function highlightMenuItem(itemToHiglight) {
-    const removeHighlightMenus = isSeleted.map(item => {
-      if (item.state === true) {
-        return { ...item, state: false };
-      }
-      return item;
-    });
-
-    //Add Highligt Menus to Menu Clicked
-    const makeActive = removeHighlightMenus.map(item => {
-      if (item.name === itemToHiglight.name) {
-        return { ...item, state: true };
-      }
-      return item;
-    });
-
-    setSelected([...makeActive]);
-  }
-
   return (
     <Fragment>
-      {isSeleted.map((item, idx) => (
-        <RenderMenuItem
-          key={idx}
-          selected={selected}
-          highlightMenuItem={() => highlightMenuItem(item)}
-          {...item}
-        />
+      {menus.map((item, idx) => (
+        <RenderMenuItem key={idx} selected={selected} {...item} />
       ))}
     </Fragment>
   );
