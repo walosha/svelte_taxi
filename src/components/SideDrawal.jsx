@@ -2,7 +2,9 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
 import { Drawer, Divider, List } from "@material-ui/core";
+import { withRouter } from "react-router-dom";
 import { MainListItems, SecondaryListItems } from "../components/ListItems";
+import { parseUrl } from "../utils";
 
 const drawerWidth = 230;
 
@@ -18,8 +20,9 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function SideDrawal() {
+function SideDrawal({ location }) {
   const classes = useStyles();
+
   return (
     <Drawer
       variant="permanent"
@@ -29,7 +32,7 @@ export default function SideDrawal() {
     >
       <Divider />
       <List>
-        <MainListItems />
+        <MainListItems selected={parseUrl(location.pathname)} />
       </List>
       <Divider />
       <List>
@@ -38,3 +41,4 @@ export default function SideDrawal() {
     </Drawer>
   );
 }
+export default withRouter(SideDrawal);

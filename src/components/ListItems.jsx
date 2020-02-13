@@ -42,16 +42,15 @@ const menus = [
 
 // Rendering of JSX Menus list Items
 
-function RenderMenuItem({ name, icons, state, highlightMenuItem }) {
+function RenderMenuItem({ name, selected, icons, state, highlightMenuItem }) {
+  const url = name
+    .split(" ")
+    .join("-")
+    .toLowerCase();
+
   return (
-    <StyledLink
-      onClick={highlightMenuItem}
-      to={`/${name
-        .split(" ")
-        .join("-")
-        .toLowerCase()}`}
-    >
-      <ListItem selected={state} button>
+    <StyledLink onClick={highlightMenuItem} to={`/${url}`}>
+      <ListItem selected={url === selected} button>
         <ListItemIcon>{icons}</ListItemIcon>
         <ListItemText primary={name} />
       </ListItem>
@@ -59,7 +58,7 @@ function RenderMenuItem({ name, icons, state, highlightMenuItem }) {
   );
 }
 
-export const MainListItems = () => {
+export const MainListItems = ({ selected }) => {
   const [isSeleted, setSelected] = useState(menus);
 
   //Remove Highligted Menus
@@ -87,6 +86,7 @@ export const MainListItems = () => {
       {isSeleted.map((item, idx) => (
         <RenderMenuItem
           key={idx}
+          selected={selected}
           highlightMenuItem={() => highlightMenuItem(item)}
           {...item}
         />
