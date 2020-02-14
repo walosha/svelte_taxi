@@ -42,14 +42,14 @@ const menus = [
 
 // Rendering of JSX Menus list Items
 
-function RenderMenuItem({ name, selected, icons }) {
+function RenderMenuItem({ name, selected, icons, handleDrawerToggle }) {
   const url = name
     .split(" ")
     .join("-")
     .toLowerCase();
 
   return (
-    <StyledLink to={`/${url}`}>
+    <StyledLink onClick={handleDrawerToggle} to={`/${url}`}>
       <ListItem selected={url === selected} button>
         <ListItemIcon>{icons}</ListItemIcon>
         <ListItemText primary={name} />
@@ -58,11 +58,16 @@ function RenderMenuItem({ name, selected, icons }) {
   );
 }
 
-export const MainListItems = ({ selected }) => {
+export const MainListItems = ({ selected, handleDrawerToggle }) => {
   return (
     <Fragment>
       {menus.map((item, idx) => (
-        <RenderMenuItem key={idx} selected={selected} {...item} />
+        <RenderMenuItem
+          key={idx}
+          handleDrawerToggle={handleDrawerToggle}
+          selected={selected}
+          {...item}
+        />
       ))}
     </Fragment>
   );

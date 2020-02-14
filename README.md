@@ -15,11 +15,6 @@ To deploy simply run
 
 npm run build
 
-Built With:
-
-Reaact,
-Redux,
-
 Contributing
 Please feel free to send pull request if you want to contribute!
 
@@ -49,11 +44,10 @@ Clone the Repository and run
 #### Built With:
 
 `React...`
-`Redux...`
-`material UI...`
-`Styled Components...`
+`Material UI...`
 `React Router Dom...`
 `ReCharts...`
+`Apollo Client - GraphQL,`
 
 Contributing
 Please feel free to send pull request if you want to contribute!

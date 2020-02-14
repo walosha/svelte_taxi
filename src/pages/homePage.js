@@ -24,11 +24,19 @@ const useStyles = makeStyles({
 
 function HomePage() {
   const classes = useStyles();
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
   return (
     <Fragment>
-      <Header />
+      <Header mobileOpen={mobileOpen} handleDrawerToggle={handleDrawerToggle} />
       <div className={classes.root}>
-        <SiderDrawal />
+        <SiderDrawal
+          handleDrawerToggle={handleDrawerToggle}
+          mobileOpen={mobileOpen}
+        />
         <Switch>
           <Route exact path="/dashboard" component={Dashboard}></Route>
           <Route exact path="/drivers" component={Drivers}></Route>

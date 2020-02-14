@@ -47,11 +47,11 @@ export default function DashBoard() {
               <DashBoardInfoCard {...data} />
             </Grid>
           ))}
-          <Grid className={classes.paper} item sm={12} md={7}>
+          <Grid className={classes.paper} item xs={12} md={7}>
             {/* Line chart for trip and Travel */}
             {RenderLineChart(lineData)}
           </Grid>
-          <Grid item xs={12} sm={12} md={5}>
+          <Grid item xs={12} md={5}>
             {/* Progress Bar for Top 6 Cities */}
             <Typography
               component="h2"
