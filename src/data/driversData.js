@@ -59,7 +59,7 @@ export const driversData = [
   ),
   createData(
     "#032",
-    "Olawale Afuye",
+    "Balogun Kazeem",
     120,
     "BD-742-KTU",
     "Ikorodu",
